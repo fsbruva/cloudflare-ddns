@@ -16,20 +16,17 @@ class Cloudflare
 
   const ENDPOINT = 'https://api.cloudflare.com/client/v4/';
 
-  private $email;
-  private $apiKey;
+  private $apiToken;
   private $resultInfo;
 
   /**
-   * @param string $email
-   * @param string $apiKey
+   * @param string $apiToken
    *
    * @return CloudFlare
    */
-  public function __construct($email, $apiKey)
+  public function __construct($apiToken)
   {
-    $this->email  = $email;
-    $this->apiKey = $apiKey;
+    $this->apiToken = $apiToken;
   }
 
   /**
@@ -48,8 +45,7 @@ class Cloudflare
     $curl = curl_init();
 
     $headers = [
-      'X-Auth-Email: ' . $this->email,
-      'X-Auth-Key: ' . $this->apiKey,
+      'Authorization: Bearer ' . $this->apiToken,
       'User-Agent: cloudflare-php'
     ];
 

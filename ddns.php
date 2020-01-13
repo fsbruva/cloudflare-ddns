@@ -14,7 +14,7 @@ if (!file_exists($confFile))
 
 $config = require $confFile;
 
-foreach (['cloudflare_email', 'cloudflare_api_key', 'domain', 'record_name', 'ttl', 'protocol'] as $key)
+foreach (['cloudflare_api_token', 'domain', 'record_name', 'ttl', 'protocol'] as $key)
 {
   if (!isset($config[$key]) || $config[$key] === '')
   {
@@ -23,7 +23,7 @@ foreach (['cloudflare_email', 'cloudflare_api_key', 'domain', 'record_name', 'tt
   }
 }
 
-$api = new Cloudflare($config['cloudflare_email'], $config['cloudflare_api_key']);
+$api = new Cloudflare($config['cloudflare_api_token']);
 
 $domain     = $config['domain'];
 $recordName = $config['record_name'];

@@ -1,8 +1,7 @@
 <?php
 
 return array(
-  'cloudflare_email' => '', // the email address you use to log into CloudFlare
-  'cloudflare_api_key' => '', // your CloudFlare token. Get it here: https://www.cloudflare.com/a/account/my-account
+  'cloudflare_api_token' => '', // your CloudFlare token. Get it here: https://dash.cloudflare.com/profile/api-tokens
   
   'domain' => '', // the name of the domain that this record is for (e.g. "example.com")
   'record_name' => '', // the full name of the record that this script will update (e.g. "my.computer.example.com")
@@ -12,7 +11,7 @@ return array(
 
   'protocol' => 'ipv4', // what protocol to use to get the ip address. Possible values: "ipv4", "ipv6", "auto".
 
-  'auth_token' => '' // (optional) if set, enable API mode and require this auth_token to set IP
+  'auth_token' => '' // (optional) if set, enable cloudflare_ddns API mode and require this auth_token to set IP
                      // generate a random string here:
                      // https://www.random.org/strings/?num=1&len=20&digits=on&upperalpha=on&loweralpha=on&format=plain
 );

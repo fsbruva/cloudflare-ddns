@@ -4,6 +4,16 @@ A dynamic DNS script (written in PHP) that uses CloudFlare's free DNS and their 
 
 ## How To Use
 
+Create API token (https://dash.cloudflare.com/profile/api-tokens) with following criteria:
+Permission:
+    Account -> Access: Organizations, Identity Providers, and Groups: Read
+    Zone -> Zone: Read
+    Zone -> DNS: Edit
+Account Resources:
+    Include -> Your Account
+Zone Resources:
+    Include -> Specific zone: Your DNS Zone
+
 ```
 git clone https://github.com/lyoshenka/cloudflare-ddns.git
 cd cloudflare-ddns
